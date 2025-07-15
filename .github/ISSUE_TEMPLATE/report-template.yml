@@ -8,60 +8,75 @@ body:
     attributes:
       label: "Did the module work for you?"
       options:
-        - "Yes, it worked (Working)"
-        - "No, it did not work (Not Working)"
+        - "Working"
+        - "Not Working"
       description: "Select whether the camera fix worked on your device."
     validations:
       required: true
 
-  - type: textarea
+  - type: dropdown
     id: device-info
     attributes:
       label: "Device Info"
-      description: "Example: OnePlus 13T 12GB/256GB"
+      options:
+        - "OnePlus 13T 12GB/256GB"
+        - "OnePlus 13T 12GB/512GB"
+        - "OnePlus 13T 16GB/256GB"
+        - "OnePlus 13T 16GB/512GB"
+        - "OnePlus 13T 16GB/1TB"
+      description: "Select your device model and RAM/Storage configuration."
     validations:
       required: true
 
-  - type: textarea
+  - type: dropdown
+    id: device-color
+    attributes:
+      label: "Device Color"
+      options:
+        - "Black"
+        - "Pink"
+        - "Silver"
+      description: "Select your device color."
+    validations:
+      required: true
+
+  - type: dropdown
     id: oxygenos-version
     attributes:
       label: "OxygenOS Version"
-      description: "Example: OxygenOS 15.0.0.3.GM21AA"
+      options:
+        - "OxygenOS CPH2723_15.0.2.302"
+        - "OxygenOS CPH2723_15.0.2.303"
+        - "OxygenOS CPH2723_15.0.2.400"
+      description: "Select your OxygenOS version."
     validations:
-      required: false
+      required: true
 
   - type: dropdown
-    id: bootloader
+    id: root-manager
     attributes:
-      label: "Bootloader Status"
+      label: "Root Manager Used"
       options:
-        - "Unlocked"
-        - "Locked"
-      description: "Was your bootloader unlocked when applying the module?"
+        - "Magisk"
+        - "Magisk Alpha"
+        - "Apatch"
+        - "KernelSU"
+        - "KernelSU-Next"
+        - "Other (Please specify in the Additional Info section)"
+      description: "Select the root manager you used to apply the module."
     validations:
-      required: false
-
-  - type: dropdown
-    id: root
-    attributes:
-      label: "Root Access (Magisk, etc.)"
-      options:
-        - "Yes, Magisk installed"
-        - "No, not rooted"
-      description: "Did you have root access when applying the module?"
-    validations:
-      required: false
+      required: true
 
   - type: textarea
     id: symptoms
     attributes:
-      label: "Issues Fixed or Still Present"
-      description: "Be specific – e.g., Camera not launching, battery not reported correctly, etc."
+      label: "Symptoms"
+      description: "Describe the symptoms you experienced with the module."
     validations:
       required: true
 
   - type: textarea
-    id: additional
+    id: additional-info
     attributes:
       label: "Additional Info"
       description: "Mention other modules, custom kernels, or anything else that might be relevant."
