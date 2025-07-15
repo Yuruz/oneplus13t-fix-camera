@@ -1,0 +1,54 @@
+name: Camera Fix Report
+description: Help us identify compatibility issues by reporting whether the module works for you.
+title: "[Report] Camera Fix: Working / Not Working"
+labels: ["report", "feedback"]
+body:
+  - type: dropdown
+    id: status
+    attributes:
+      label: Did the module work for you?
+      options:
+        - Yes, it worked (Working)
+        - No, it did not work (Not Working)
+    validations:
+      required: true
+
+  - type: textarea
+    id: device-info
+    attributes:
+      label: Device Info
+      description: Include model name, storage, RAM, etc. (e.g., OnePlus 13T 12GB/256GB)
+    validations:
+      required: true
+
+  - type: input
+    id: oxygenos-version
+    attributes:
+      label: OxygenOS Version
+      placeholder: e.g., OxygenOS 15.0.0.3.GM21AA
+
+  - type: input
+    id: bootloader
+    attributes:
+      label: Bootloader Status
+      placeholder: Locked / Unlocked
+
+  - type: input
+    id: root
+    attributes:
+      label: Root Access (Magisk, etc.)
+      placeholder: e.g., Magisk v27.0 installed
+
+  - type: textarea
+    id: symptoms
+    attributes:
+      label: Issues Fixed or Still Present
+      description: Be specific – e.g., "Camera not launching", "Battery showing wrong capacity", etc.
+    validations:
+      required: true
+
+  - type: textarea
+    id: additional
+    attributes:
+      label: Additional Info
+      description: Include anything that might help: other modules, custom kernels, installation steps, etc.
