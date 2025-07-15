@@ -1,54 +1,69 @@
-name: Camera Fix Report
-description: Help us identify compatibility issues by reporting whether the module works for you.
+name: "Camera Fix Report"
+description: "Let us know if the module worked or not on your OnePlus 13T with OxygenOS."
 title: "[Report] Camera Fix - Working or Not Working"
 labels: ["report", "feedback"]
 body:
   - type: dropdown
     id: status
     attributes:
-      label: Did the module work for you?
+      label: "Did the module work for you?"
       options:
         - "Yes, it worked (Working)"
         - "No, it did not work (Not Working)"
+      description: "Select whether the camera fix worked on your device."
     validations:
       required: true
 
   - type: textarea
     id: device-info
     attributes:
-      label: Device Info
-      description: Include model name, storage, RAM, etc. (e.g., OnePlus 13T 12GB/256GB)
+      label: "Device Info"
+      description: "Example: OnePlus 13T 12GB/256GB"
     validations:
       required: true
 
-  - type: input
+  - type: textarea
     id: oxygenos-version
     attributes:
-      label: OxygenOS Version
-      placeholder: "e.g., OxygenOS 15.0.0.3.GM21AA"
+      label: "OxygenOS Version"
+      description: "Example: OxygenOS 15.0.0.3.GM21AA"
+    validations:
+      required: false
 
-  - type: input
+  - type: dropdown
     id: bootloader
     attributes:
-      label: Bootloader Status
-      placeholder: "Locked / Unlocked"
+      label: "Bootloader Status"
+      options:
+        - "Unlocked"
+        - "Locked"
+      description: "Was your bootloader unlocked when applying the module?"
+    validations:
+      required: false
 
-  - type: input
+  - type: dropdown
     id: root
     attributes:
-      label: Root Access (Magisk, etc.)
-      placeholder: "e.g., Magisk v27.0 installed"
+      label: "Root Access (Magisk, etc.)"
+      options:
+        - "Yes, Magisk installed"
+        - "No, not rooted"
+      description: "Did you have root access when applying the module?"
+    validations:
+      required: false
 
   - type: textarea
     id: symptoms
     attributes:
-      label: Issues Fixed or Still Present
-      description: Be specific – e.g., "Camera not launching", "Battery showing wrong capacity", etc.
+      label: "Issues Fixed or Still Present"
+      description: "Be specific – e.g., Camera not launching, battery not reported correctly, etc."
     validations:
       required: true
 
   - type: textarea
     id: additional
     attributes:
-      label: Additional Info
-      description: Include anything that might help: other modules, custom kernels, installation steps, etc.
+      label: "Additional Info"
+      description: "Mention other modules, custom kernels, or anything else that might be relevant."
+    validations:
+      required: false
