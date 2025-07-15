@@ -73,7 +73,7 @@ body:
       label: "Symptoms"
       description: "Describe the symptoms you experienced with the module."
     validations:
-      required: true
+      required: false
 
   - type: textarea
     id: additional-info
