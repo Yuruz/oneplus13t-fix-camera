@@ -37,6 +37,9 @@ mount --bind $MODDIR/odm/firmware/fastchg /odm/firmware/fastchg
 # Mounting /odm/lib64
 mount --bind $MODDIR/odm/lib64/vendor.oplus.hardware.eid-V1-ndk.so /odm/lib64/vendor.oplus.hardware.esim-V1-ndk.so
 
+# Mounting /odm/bin/hw
+mount --bind $MODDIR/odm/bin/hw/vendor.oplus.hardware.eid@1.0-service /odm/bin/hw/vendor.oplus.hardware.esim@1.0-service
+
 # Mounting /odm/lib64/camera/
 mount --bind $MODDIR/odm/lib64/camera /odm/lib64/camera
 
@@ -52,6 +55,7 @@ chcon -R u:object_r:vendor_configs_file:s0 /odm/firmware/fastchg
 
 chcon u:object_r:vendor_file:s0 /odm/lib64/hw/camera.oemlayer.so
 
+chcon u:object_r:vendor_file:s0 /odm/lib64/vendor.oplus.hardware.esim-V1-ndk.so
 
 # Temporary folder for substitution
 TMPDIR=/data/adb/tmp/empty_dir
